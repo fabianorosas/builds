@@ -19,7 +19,7 @@ build-iso:
     OpenPOWER Host OS virtualization management:
     - open-power-host-os-virt-management
   iso_name: OpenPOWER-Host_OS
-  iso_repo_packages: []
+  iso_repo_packages: [device-mapper-multipath]
   iso_repo_packages_groups:
   - OpenPOWER Host OS all
   - OpenPOWER Host OS base
