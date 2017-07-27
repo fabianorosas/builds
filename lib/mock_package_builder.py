@@ -110,10 +110,10 @@ class MockPackageBuilder(package_builder.PackageBuilder):
 
         LOG.info("%s: Building RPM" % package.name)
         try:
+            # On success save rpms and destroy build directory unless
+            # told otherwise.
             self.mock.run_command(cmd)
-
-            # On success save rpms and destroy build directory unless told
-            # otherwise.
+            package.built = True
         except exception.SubprocessError:
             LOG.info("%s: Failed to build RPMs, build artifacts are kept at "
                   "%s" % (package.name, self.build_dir))
